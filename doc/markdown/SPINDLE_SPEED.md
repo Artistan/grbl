@@ -1,5 +1,6 @@
 
 [grbl + SuperPID2 = Super Awesome](http://www.eyemonline.com/?p=331)
+[Super-PID FAQ](https://www.superpid.com/SuperPID-Tech-Info-Support-FAQ-Downloads.htm)
 
 `/grbl/config.h`
 
