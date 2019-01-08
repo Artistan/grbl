@@ -263,7 +263,7 @@
   #define DEFAULT_HOMING_DEBOUNCE_DELAY   25       //  $26   :: [Homing debounce, milliseconds](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#26---homing-debounce-milliseconds)
   #define DEFAULT_HOMING_PULLOFF          5        //  $27   :: [Homing pull-off, mm](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#27---homing-pull-off-mm)
   #define DEFAULT_SPINDLE_RPM_MAX         30000.0  //  $30   :: [Max spindle speed, RPM](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#30---max-spindle-speed-rpm)
-  #define DEFAULT_SPINDLE_RPM_MIN         0        //  $31   :: [Min spindle speed, RPM](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#31---min-spindle-speed-rpm)
+  #define DEFAULT_SPINDLE_RPM_MIN         80.0     //  $31   :: [Min spindle speed, RPM](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#31---min-spindle-speed-rpm)
   #define DEFAULT_LASER_MODE              0        //  $32   :: [Laser mode, boolean](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#32---laser-mode-boolean)
   #define DEFAULT_X_STEPS_PER_MM          40.000   //  $100  :: [X steps/mm](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#100-101-and-102--xyz-stepsmm)
   #define DEFAULT_Y_STEPS_PER_MM          40.000   //  $101  :: [Y steps/mmß](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration#100-101-and-102--xyz-stepsmm)

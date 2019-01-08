@@ -34,7 +34,8 @@
 // NOTE: OEMs can avoid the need to maintain/update the defaults.h and cpu_map.h files and use only
 // one configuration file by placing their specific defaults and pin map at the bottom of this file.
 // If doing so, simply comment out these two defines and see instructions below.
-#define DEFAULTS_GENERIC
+// #define DEFAULTS_GENERIC
+#define DEFAULTS_SHAPEOKO_3
 #define CPU_MAP_ATMEGA328P // Arduino Uno CPU
 
 // Serial baud rate
@@ -208,7 +209,7 @@
 // NOTE: If VARIABLE_SPINDLE is enabled(default), this option has no effect as the PWM output and
 // spindle enable are combined to one pin. If you need both this option and spindle speed PWM,
 // uncomment the config option USE_SPINDLE_DIR_AS_ENABLE_PIN below.
-// #define INVERT_SPINDLE_ENABLE_PIN // Default disabled. Uncomment to enable.
+#define INVERT_SPINDLE_ENABLE_PIN // Default disabled. Uncomment to enable.
 
 // Inverts the selected coolant pin from low-disabled/high-enabled to low-enabled/high-disabled. Useful
 // for some pre-built electronic boards.
@@ -357,7 +358,7 @@
 // NOTE: BEWARE! The Arduino bootloader toggles the D13 pin when it powers up. If you flash Grbl with
 // a programmer (you can use a spare Arduino as "Arduino as ISP". Search the web on how to wire this.),
 // this D13 LED toggling should go away. We haven't tested this though. Please report how it goes!
-// #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+#define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
 
 // Alters the behavior of the spindle enable pin with the USE_SPINDLE_DIR_AS_ENABLE_PIN option . By default,
 // Grbl will not disable the enable pin if spindle speed is zero and M3/4 is active, but still sets the PWM 
@@ -561,7 +562,7 @@
 // NOTE: Still a work-in-progress. Machine coordinates must be in all negative space and
 // does not work with HOMING_FORCE_SET_ORIGIN enabled. Parking motion also moves only in
 // positive direction.
-// #define PARKING_ENABLE  // Default disabled. Uncomment to enable
+#define PARKING_ENABLE  // Default disabled. Uncomment to enable
 
 // Configure options for the parking motion, if enabled.
 #define PARKING_AXIS Z_AXIS // Define which axis that performs the parking motion
@@ -577,8 +578,8 @@
 // executed in sync with g-code commands. It is not a real-time command.
 // NOTE: PARKING_ENABLE is required. By default, M56 is active upon initialization. Use 
 // DEACTIVATE_PARKING_UPON_INIT to set M56 P0 as the power-up default.
-// #define ENABLE_PARKING_OVERRIDE_CONTROL   // Default disabled. Uncomment to enable
-// #define DEACTIVATE_PARKING_UPON_INIT // Default disabled. Uncomment to enable.
+#define ENABLE_PARKING_OVERRIDE_CONTROL   // Default disabled. Uncomment to enable
+#define DEACTIVATE_PARKING_UPON_INIT // Default disabled. Uncomment to enable.
 
 // This option will automatically disable the laser during a feed hold by invoking a spindle stop
 // override immediately after coming to a stop. However, this also means that the laser still may
@@ -596,8 +597,8 @@
 // is enabled. Make sure the constant values are exactly the same as the script solution.
 // NOTE: When N_PIECES < 4, unused RPM_LINE and RPM_POINT defines are not required and omitted.
 #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
-#define RPM_MAX  11686.4  // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
-#define RPM_MIN  202.5    // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
+#define RPM_MAX  30000  // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
+#define RPM_MIN  80     // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
 #define RPM_POINT12  6145.4  // Used N_PIECES >=2. Junction point between lines 1 and 2.
 #define RPM_POINT23  9627.8  // Used N_PIECES >=3. Junction point between lines 2 and 3.
 #define RPM_POINT34  10813.9 // Used N_PIECES = 4. Junction point between lines 3 and 4.
